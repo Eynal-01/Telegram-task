@@ -95,34 +95,35 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\t.png" />
+    <Resource Include="Images\redball.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\ball.png" />
+    <Resource Include="Images\cat.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\search.png" />
+    <Resource Include="Images\arrowleft.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\redball.png" />
+    <Resource Include="Images\bin.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\cat.jpg" />
+    <Resource Include="Images\parameter.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\arrow.png" />
+    <Resource Include="Images\smile.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\arrowleft.png" />
+    <Resource Include="Images\send.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\bin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Photos\parameter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Photos\smile.png" />
+    <Resource Include="Images\arrow %281%29.png" />
+    <Resource Include="Images\daire.png" />
+    <Resource Include="Images\Telegram big icon.png" />
+    <Resource Include="Images\Telegram small icon - Copy.png" />
+    <Resource Include="Images\Telegram small icon.png" />
+    <Resource Include="Images\car1.jpg" />
+    <Content Include="Images\dog.jfif" />
+    <Resource Include="Images\dog111.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
