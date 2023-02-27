@@ -122,8 +122,10 @@
     <Resource Include="Images\Telegram small icon - Copy.png" />
     <Resource Include="Images\Telegram small icon.png" />
     <Resource Include="Images\car1.jpg" />
-    <Content Include="Images\dog.jfif" />
     <Resource Include="Images\dog111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

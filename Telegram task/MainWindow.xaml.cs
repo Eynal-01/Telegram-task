@@ -25,9 +25,9 @@ namespace Telegram_task
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Searchtxtb_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            SearchTxtb.IsEnabled = true;
+            Searchtxtb.Text = Searchtxtb.Text.Replace("Search", " ");
         }
     }
 }
