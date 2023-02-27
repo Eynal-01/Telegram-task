@@ -387,7 +387,7 @@
                             ></Button>
                     </Canvas>
                 </Canvas>
-                
+
             </Canvas>
             <Canvas Grid.Column="1">
                 <Canvas
@@ -412,8 +412,48 @@
                         Canvas.Left="620"
                         Canvas.Top="10"
                         ></Image>
+                    <Button
+                        Height="1"
+                        Width="660"
+                        Background="gray"
+                        Canvas.Top="39"
+                        >
+                    </Button>
                 </Canvas>
-                </Canvas> 
+                <Canvas
+                    Canvas.Top="40"
+                    Height="480"
+                    Width="660"
+                    >
+                    <Label
+                        Height="60"
+                        Width="60"
+                        BorderThickness="0"
+                        Background="#D1D1D1 "
+                        Canvas.Top="420"
+                        >
+                    </Label>
+                    <Image
+                        Source="Photos/smile.png"
+                        Height="30"
+                        Canvas.Top="435"
+                        Canvas.Left="10"
+                        ></Image>
+                    <TextBox
+                        Height="60"
+                        Width="530"
+                        Canvas.Left="60"
+                        Canvas.Top="420"
+                        Background="#D1D1D1"
+                        BorderThickness="0"
+                        ></TextBox>
+                    <Button
+                        Width="70"
+                        
+                        ></Button>
+                    
+                </Canvas>
+            </Canvas>
         </Grid>
 
     </Grid>
