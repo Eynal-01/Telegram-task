@@ -115,5 +115,11 @@
   <ItemGroup>
     <Resource Include="Photos\arrowleft.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\parameter.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

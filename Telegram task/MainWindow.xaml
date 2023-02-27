@@ -49,6 +49,12 @@
                 Canvas.Top="13"
                 Foreground="White"
                 ></Label>
+            <Button
+                Height="1"
+                Width="990"
+                Canvas.Top="62"
+                Foreground="gray"
+                ></Button>
         </Canvas>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -383,6 +389,31 @@
                 </Canvas>
                 
             </Canvas>
+            <Canvas Grid.Column="1">
+                <Canvas
+                    Height="40"
+                    Width="660"
+                    >
+                    <Label
+                        Content="Elena Cooper"
+                        FontSize="20"
+                        Canvas.Left="50"
+                        Foreground="Gray"
+                        ></Label>
+                    <Image
+                        Source="Photos/bin.png"
+                        Height="20"
+                        Canvas.Left="590"
+                        Canvas.Top="10"
+                        ></Image>
+                    <Image
+                        Source="Photos/parameter.png"
+                        Height="20"
+                        Canvas.Left="620"
+                        Canvas.Top="10"
+                        ></Image>
+                </Canvas>
+                </Canvas> 
         </Grid>
 
     </Grid>
