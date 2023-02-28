@@ -424,7 +424,7 @@
             Canvas.Top="411"
             ></Label>
             <Button Style="{DynamicResource ButtonStyle1}" Width="80" Height="40" Canvas.Left="90" Canvas.Top="490"></Button>
-            <Image Source="Images/typing1.gif" Width="80" Canvas.Left="100" Canvas.Top="495" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top"></Image>
+            <TextBlock FontSize="12" Text="Typing..." Canvas.Left="110" Canvas.Top="500"></TextBlock>
             <Ellipse Height="50" Width="50" Canvas.Left="20" Canvas.Top="485">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="Images/dog3.jpg"/>
