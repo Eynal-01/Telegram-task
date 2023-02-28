@@ -95,9 +95,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\redball.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\cat.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -118,14 +115,38 @@
   <ItemGroup>
     <Resource Include="Images\arrow %281%29.png" />
     <Resource Include="Images\daire.png" />
-    <Resource Include="Images\Telegram big icon.png" />
-    <Resource Include="Images\Telegram small icon - Copy.png" />
     <Resource Include="Images\Telegram small icon.png" />
     <Resource Include="Images\car1.jpg" />
-    <Resource Include="Images\dog111.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\car.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\audi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dog2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dog3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\greencircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\graycircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\typing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\typing1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

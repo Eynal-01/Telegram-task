@@ -5,20 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Telegram_task"
         mc:Ignorable="d"
-        Title="MainWindow" Height="635" Width="1000"
+        Title="MainWindow" Height="700" Width="1000"
         ResizeMode="NoResize"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
         >
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="Gray"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="DarkGray"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Canvas>
 
-
-    <Canvas >
-
-        <Border Background="White" CornerRadius="20" Height="635" Width="1000"  ></Border>
-
-
+        <Border Background="White" CornerRadius="20" Height="700" Width="1000"  ></Border>
         <Image 
             Source="Images/Telegram small icon.png" 
             Height="40" 
@@ -72,7 +125,7 @@
             ></Label>
         <TextBlock 
             Width="2" 
-            Height="580"   
+            Height="645"   
             Background="#D8D8D8 "
             Canvas.Left="272" 
             Canvas.Top="55" />
@@ -111,6 +164,272 @@
             Padding="0, 10, 0, 0" 
             MouseUp="Searchtxtb_MouseUp" 
             ></TextBox>
-    </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="110">
+            <Label Foreground="BLACK" Content="Resent" FontSize="15" Canvas.Left="10" Canvas.Top="10" FontWeight="Light"></Label>
+            <Image 
+            Source="Images/arrow (1).png"
+             Height="38" 
+            Canvas.Left="240" Width="13" 
+            Canvas.Top="22" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            ></Image>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="165">
+            <Label Foreground="BLACK" Content="Alisia Porshe" FontSize="15" Canvas.Left="50" Canvas.Top="3" FontWeight="Light"></Label>
+            <Image 
+            Source="Images/daire.png"
+            Height="20" 
+            Width="20" 
+            Canvas.Left="240" 
+            Canvas.Top="25" 
+            ></Image>
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Foreground="Gray" Canvas.Left="50" Canvas.Top="25" Content="Hi help me pls"></Label>
+            <Label Foreground="Gray" Canvas.Left="200" Canvas.Top="2" Content="01:30 AM"></Label>
+            <Label FontSize="10" Content="1" Foreground="white" Canvas.Left="242" Canvas.Top="23"></Label>
+            <Ellipse Height="40" Width="40" Canvas.Left="5" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/cat.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="10" Width="10" Canvas.Left="37" Canvas.Top="36">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/greencircle.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="220">
+            <Label Foreground="BLACK" Content="Michael Hasse" FontSize="15" Canvas.Left="50" Canvas.Top="3" FontWeight="Light"></Label>
 
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Foreground="Gray" Canvas.Left="50" Canvas.Top="25" Content="Thank"></Label>
+            <Label Foreground="Gray" Canvas.Left="200" Canvas.Top="2" Content="03:45 AM"></Label>
+            <Label FontSize="10" Content="1" Foreground="white" Canvas.Left="242" Canvas.Top="23"></Label>
+            <Ellipse Height="40" Width="40" Canvas.Left="5" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/car1.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="10" Width="10" Canvas.Left="37" Canvas.Top="36">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/graycircle.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="275">
+            <Label Foreground="BLACK" Content="Robert Niro" FontSize="15" Canvas.Left="50" Canvas.Top="3" FontWeight="Light"></Label>
+            <Image 
+            Source="Images/daire.png"
+            Height="20" 
+            Width="20" 
+            Canvas.Left="240" 
+            Canvas.Top="25" 
+            ></Image>
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Foreground="LightGreen" Canvas.Left="50" Canvas.Top="25" Content="Typing..."></Label>
+            <Label Foreground="Gray" Canvas.Left="200" Canvas.Top="2" Content="02:10 AM"></Label>
+            <Label FontSize="10" Content="3" Foreground="white" Canvas.Left="242" Canvas.Top="23"></Label>
+            <Ellipse Height="40" Width="40" Canvas.Left="5" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/car.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="10" Width="10" Canvas.Left="37" Canvas.Top="36">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/greencircle.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="330">
+            <Label Foreground="BLACK" Content="Robert Niro" FontSize="15" Canvas.Left="50" Canvas.Top="3" FontWeight="Light"></Label>
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Foreground="gray" Canvas.Left="50" Canvas.Top="25" Content="Of course mate"></Label>
+            <Label Foreground="Gray" Canvas.Left="200" Canvas.Top="2" Content="02:10 AM"></Label>
+            <Label FontSize="10" Content="3" Foreground="white" Canvas.Left="242" Canvas.Top="23"></Label>
+            <Ellipse Height="40" Width="40" Canvas.Left="5" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/audi.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="10" Width="10" Canvas.Left="37" Canvas.Top="36">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/graycircle.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="385">
+            <Label Foreground="BLACK" Content="Elena Cooper" FontSize="15" Canvas.Left="50" Canvas.Top="3" FontWeight="Light"></Label>
+
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Foreground="Gray" Canvas.Left="50" Canvas.Top="25" Content="Ok, i will be there"></Label>
+            <Label Foreground="Gray" Canvas.Left="200" Canvas.Top="2" Content="01:40 AM"></Label>
+            <Label FontSize="10" Content="1" Foreground="white" Canvas.Left="242" Canvas.Top="23"></Label>
+            <Ellipse Height="40" Width="40" Canvas.Left="5" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog2.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="10" Width="10" Canvas.Left="37" Canvas.Top="36">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/graycircle.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="440">
+            <Label Foreground="BLACK" Content="Leticia Lower" FontSize="15" Canvas.Left="50" Canvas.Top="3" FontWeight="Light"></Label>
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Foreground="lightgreen" Canvas.Left="50" Canvas.Top="25" Content="Typing..."></Label>
+            <Label Foreground="Gray" Canvas.Left="200" Canvas.Top="2" Content="01:30 AM"></Label>
+            <Label FontSize="10" Content="1" Foreground="white" Canvas.Left="242" Canvas.Top="23"></Label>
+            <Ellipse Height="40" Width="40" Canvas.Left="5" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog3.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="10" Width="10" Canvas.Left="37" Canvas.Top="36">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/greencircle.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+        <Canvas Width="272" Height="55" Canvas.Top="495">
+            <Label Foreground="BLACK" Content="All contacts" FontSize="15" Canvas.Left="10" Canvas.Top="10" FontWeight="Light"></Label>
+            <Image 
+                Source="Images/arrowleft.png" 
+                Height="38" 
+                Canvas.Left="240" Width="13" 
+                Canvas.Top="5" >
+            </Image>
+            <Label Height="1" Width="272" Background="#D8D8D8"></Label>
+            <Label Canvas.Top="54" Height="1" Width="272" Background="#D8D8D8"></Label>
+        </Canvas>
+        <Canvas Width="728" Height="55" Canvas.Top="55" Canvas.Left="272">
+            <Ellipse Height="40" Width="40" Canvas.Left="15" Canvas.Top="7">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog3.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label Content="Leticia Lower" FontSize="20" Canvas.Left="60" Canvas.Top="7" Foreground="Gray"></Label>
+            <Image Source="Images/bin.png" Width="30" Canvas.Right="90" Canvas.Top="10"></Image>
+            <Image Source="Images/parameter.png" Width="30" Canvas.Right="30" Canvas.Top="12"></Image>
+
+        </Canvas>
+        <Canvas Width="728" Height="590" Canvas.Top="110" Canvas.Left="272">
+            <Button Width="55" Height="55" Foreground="#D8D8D8" Canvas.Left="673" Canvas.Top="535">
+                <Image Source="Images/send.png" Width="40"></Image>
+            </Button>
+            <TextBox 
+                Width="618" 
+                Height="55" 
+                Canvas.Left="55" 
+                Canvas.Top="535" 
+                Background="#D8D8D8" 
+                Text="Type message"
+                Foreground="Gray"
+                FontSize="20"
+                Padding="7, 10, 0, 0"
+                ></TextBox>
+            <Label 
+                Width="55" 
+                Height="55" 
+                Canvas.Top="535" 
+                Padding="10"
+                Background="#D8D8D8">
+                <Image Source="Images/smile.png" Width="30"></Image>
+            </Label>
+            <Image 
+            Source="Images/daire.png" 
+            Canvas.Left="660" 
+            Height="48" 
+            Width="68" 
+            Canvas.Top="4"></Image>
+            <Label
+            Content="VM" 
+            FontSize="18" 
+            Foreground="White" 
+            Canvas.Right="10" 
+            Canvas.Left="675" 
+            Canvas.Top="10" 
+            ></Label>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="250" Height="40" Canvas.Left="90" Canvas.Top="80"></Button>
+            <TextBlock FontSize="12" Text="The person designing is called a designer" Canvas.Left="110" Canvas.Top="90"></TextBlock>
+            <Ellipse Height="50" Width="50" Canvas.Left="20" Canvas.Top="75">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog3.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="300" Height="40" Canvas.Right="70" Canvas.Top="10"></Button>
+            <TextBlock FontSize="12" Text="Design is the creation of a plan or architectural" Canvas.Left="380" Canvas.Top="20"></TextBlock>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="300" Height="40" Canvas.Right="70" Canvas.Top="150"></Button>
+            <TextBlock FontSize="12" Text="Convention for the construction of an business" Canvas.Left="380" Canvas.Top="160"></TextBlock>
+            <Image 
+            Source="Images/daire.png" 
+            Canvas.Left="660" 
+            Height="48" 
+            Width="68" 
+            Canvas.Top="145"></Image>
+            <Label
+            Content="VM" 
+            FontSize="18" 
+            Foreground="White" 
+            Canvas.Right="10" 
+            Canvas.Left="675" 
+            Canvas.Top="152"
+            ></Label>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="120" Height="40" Canvas.Left="90" Canvas.Top="240"></Button>
+            <TextBlock FontSize="12" Text="Of course." Canvas.Left="110" Canvas.Top="250"></TextBlock>
+            <Ellipse Height="50" Width="50" Canvas.Left="20" Canvas.Top="235">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog3.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="280" Height="40" Canvas.Left="90" Canvas.Top="290"></Button>
+            <TextBlock FontSize="12" Text="Design has different connotations in different." Canvas.Left="110" Canvas.Top="300"></TextBlock>
+            <Ellipse Height="50" Width="50" Canvas.Left="20" Canvas.Top="295">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog3.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="300" Height="40" Canvas.Right="70" Canvas.Top="360"></Button>
+            <TextBlock FontSize="12" Text="In some cases the direct construction of an object" Canvas.Left="380" Canvas.Top="370"></TextBlock>
+            <Image 
+            Source="Images/daire.png" 
+            Canvas.Left="660" 
+            Height="48" 
+            Width="68" 
+            Canvas.Top="355"></Image>
+            <Label
+            Content="VM" 
+            FontSize="18" 
+            Foreground="White" 
+            Canvas.Right="10" 
+            Canvas.Left="675" 
+            Canvas.Top="360"
+            ></Label>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="100" Height="40" Canvas.Right="70" Canvas.Top="410"></Button>
+            <TextBlock FontSize="12" Text="Okay" Canvas.Left="590" Canvas.Top="420"></TextBlock>
+            <Image 
+            Source="Images/daire.png" 
+            Canvas.Left="660" 
+            Height="48" 
+            Width="68" 
+            Canvas.Top="405"></Image>
+            <Label
+            Content="VM" 
+            FontSize="18" 
+            Foreground="White" 
+            Canvas.Right="10" 
+            Canvas.Left="675" 
+            Canvas.Top="411"
+            ></Label>
+            <Button Style="{DynamicResource ButtonStyle1}" Width="80" Height="40" Canvas.Left="90" Canvas.Top="490"></Button>
+            <Image Source="Images/typing1.gif" Width="80" Canvas.Left="100" Canvas.Top="495" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top"></Image>
+            <Ellipse Height="50" Width="50" Canvas.Left="20" Canvas.Top="485">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/dog3.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+    </Canvas>
 </Window>
